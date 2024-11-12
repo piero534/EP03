@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyecto Web - Evaluacion 03</title>
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="image/logo.png" alt="logotipo" width="180px">
+        </div>
+        
+        <nav>
+            <ul>
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#">Productos</a></li>
+                <li><a href="#">Sobre Nosotros</a></li>
+                <li><a href="#">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="slider-container">
+        <img src="image/img01.jpg" class="slider-image active" alt="Imagen 1">
+        <img src="image/img03.jpg" class="slider-image" alt="Imagen 2">
+    </div>
+    <section class="titulo1">
+        <h2>Nuestro Video Promocional</h2>
+        <p>Este es un párrafo de ejemplo que describe el contenido de esta sección. Puedes agregar más texto aquí para ampliar la descripción.</p>
+    </section>
+
+    <div class="video-container">
+        
+        <video autoplay muted loop>
+            <source src="image/video_comercial.mp4" type="video/mp4">
+        </video>
+      
+        <div class="video-title">Bienvenidos a mi Tienda Online</div>
+    </div>
+    <section class="titulo1">
+        <h2>Nuestra Ubicación</h2>
+        <p>Este es un párrafo de ejemplo que describe el contenido de esta sección. Puedes agregar más texto aquí para ampliar la descripción.</p>
+    </section>
+
+    <div id="map-container">
+        <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3901.269334573546!2d-77.05547922413575!3d-12.0937050427782!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c9aa6b702e0f%3A0x55c71153c8c3bda4!2sISIL%20-%20San%20Isidro!5e0!3m2!1ses-419!2spe!4v1731445023633!5m2!1ses-419!2spe" 
+            width="100%" 
+            height="100%" 
+            style="border:0;" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+    </div>
+
+    <section class="titulo1">
+        <h2>Nuestra Galeria de Imagenes</h2>
+        <p>Este es un párrafo de ejemplo que describe el contenido de esta sección. Puedes agregar más texto aquí para ampliar la descripción.</p>
+    </section>
+    <div class="gallery-container">
+        <div class="gallery-item">
+            <img src="image/img01.jpg" alt="Imagen 1">
+        </div>
+        <div class="gallery-item">
+            <img src="image/img03.jpg" alt="Imagen 2">
+        </div>
+        <div class="gallery-item">
+            <img src="image/img04.jpg" alt="Imagen 3">
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 Mi Tienda Online. Todos los derechos reservados.</p>
+            <ul>
+                <li><a href="#">Política de Privacidad</a></li>
+                <li><a href="#">Términos y Condiciones</a></li>
+                <li><a href="#">Ayuda</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script>
+        // Selecciona todas las imágenes del slider y configura el índice inicial
+        const images = document.querySelectorAll('.slider-image');
+        let currentIndex = 0;
+        // Función para cambiar a la siguiente imagen
+        function nextImage() {
+            // Quita la clase 'active' de la imagen actual
+            images[currentIndex].classList.remove('active');
+            // Cambia al siguiente índice, con ciclo si llega al final
+            currentIndex = (currentIndex + 1) % images.length;
+            // Añade la clase 'active' a la siguiente imagen
+            images[currentIndex].classList.add('active');
+        }
+        // Cambia de imagen cada 2 segundos
+        setInterval(nextImage, 2000);
+    </script>
+</body>
+</html>
